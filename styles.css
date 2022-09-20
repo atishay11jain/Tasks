@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background: #585c68;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi_bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume {
+  width: 800px;
+  height: auto;
+  display: flex;
+  margin: 50px auto;
+}
+
+.resume .resume_left {
+  width: 260px;
+  background: #a61b24;
+}
+
+.resume .resume_left .resume_profile {
+  width: 100%;
+  height: 300px;
+}
+
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
+}
+
+.resume .resume_left .resume_content {
+  padding: 0 25px;
+}
+
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resume_left .bold {
+  color: #fff;
+}
+
+.resume .resume_left .regular {
+  color: #000206;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 3px solid #fff;
+}
+
+.resume .resume_left .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.resume .resume_left ul li .data {
+  color: #fff;
+}
+
+.resume .resume_left .resume_skills ul li {
+  color: #fff;
+  justify-content: space-between;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #ff4e5a;
+  position: relative;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.resume .resume_right {
+  width: 520px;
+  padding: 25px;
+  background: #fff;
+}
+
+.resume .resume_right .bold {
+  color: #a61b24;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  color: #000206;
+  padding: 40px;
+  overflow: hidden;
+}
