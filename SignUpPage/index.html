@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="form-box">
+        <h1 class="heading">Sign Up</h1>
+        <form
+          action="signedUp.html"
+          onsubmit="return validation()"
+          method="get"
+        >
+          <div class="block">
+            <label for="name">UserName:</label> <br />
+            <input
+              type="text"
+              name="username"
+              id="name"
+              autocomplete="off"
+              placeholder="UserName"
+            />
+            <br />
+            <span id="username"></span>
+          </div>
+          <div class="block">
+            <label for="email">EmailId:</label> <br />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              autocomplete="off"
+              placeholder="Email Id"
+            />
+            <br />
+            <span id="useremail"></span>
+          </div>
+          <div class="block">
+            <label for="pass">Password:</label> <br />
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              autocomplete="off"
+              placeholder="Password"
+            />
+            <br />
+            <span id="userpass"></span>
+          </div>
+          <div class="block">
+            <label for="cpass">Confirm Password:</label> <br />
+            <input type="password" name="cpass" id="cpass" autocomplete="off" />
+            <br />
+            <span id="usercpass"></span> <br />
+          </div>
+          <div class="block">
+            <button class="registerto">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function missing(pass) {
+        let lowercase = /[a-z]/g;
+        let uppercase = /[A-Z]/g;
+        let numbers = /[0-9]/g;
+        let specialChar = /[!@#$%^&*]/g;
+
+        if (!lowercase.test(pass)) return true;
+        if (!uppercase.test(pass)) return true;
+        if (!numbers.test(pass)) return true;
+        if (!specialChar.test(pass)) return true;
+
+        return false;
+      }
+
+      function validation() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let cpass = document.getElementById("cpass").value;
+
+        if (name.length === 0) {
+          document.getElementById("username").innerHTML =
+            "** Please give username";
+          return false;
+        }
+
+        if (name.length <= 2 || name.length > 25) {
+          document.getElementById("username").innerHTML =
+            "** Username must be between 3 and 25 characters";
+          return false;
+        }
+
+        if (!isNaN(name)) {
+          document.getElementById("username").innerHTML =
+            "**Username can't be a number";
+          return false;
+        }
+
+        // email verification
+        if (email.length === 0) {
+          document.getElementById("useremail").innerHTML =
+            "** Please enter emailId";
+          return false;
+        }
+
+        let val = email.length - email.indexOf(".") - 1;
+        if (email.indexOf("@") === 0 || val < 2 || val > 3) {
+          document.getElementById("useremail").innerHTML =
+            "** Invalid Email Id";
+          return false;
+        }
+
+        // password verification
+        if (pass.length === 0) {
+          document.getElementById("userpass").innerHTML =
+            "** please enter  password";
+          return false;
+        }
+
+        if (pass.length < 8 || missing(pass)) {
+          document.getElementById("userpass").innerHTML =
+            "** Password must contain 8 characters that include at least 1 lowercase character,1 uppercase character,1 number and 1 special character(!@#$%^&*)";
+          return false;
+        }
+
+        // confirm password verification
+        if (cpass.length === 0) {
+          document.getElementById("usercpass").innerHTML =
+            "** Confirm Password can't be empty";
+          return false;
+        }
+
+        if (cpass != pass) {
+          document.getElementById("usercpass").innerHTML =
+            "** Confirm Password must be same as Password";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
