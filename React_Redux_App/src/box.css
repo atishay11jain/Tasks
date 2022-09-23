@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.cards {
+  display: inline-block;
+
+  width: 30%;
+  background-color: rgb(231, 228, 228);
+  border-radius: 7px;
+  margin: 40px;
+  box-shadow: 2px 2px 10px rgb(116, 116, 116);
+}
+
+.image img {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+.email {
+  text-align: center;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.title h1 {
+  font-size: 22px;
+}
